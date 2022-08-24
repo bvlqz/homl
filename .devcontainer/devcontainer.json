@@ -1,0 +1,18 @@
+{
+	"name": "Hands-On Machine Learning Container",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {}
+	},
+	"runArgs": [],
+
+	"extensions": [
+		"mhutchie.git-graph",
+		"ms-python.python",
+		"ms-toolsai.jupyter",
+		"ms-toolsai.jupyter-renderers",
+		"ms-toolsai.jupyter-keymap",
+		"ms-python.vscode-pylance",
+		"ms-python.python"
+	]
+}
