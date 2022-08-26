@@ -83,40 +83,40 @@ Trained without human supervision, the training data is unlabeled. The system tr
 
 
 ## Appendix B. Acronyms
-**CNN** Convolutional Neural Network
+**CNN**: Convolutional Neural Network
 
-**DBN** Deep Belief Networks
+**DBN**: Deep Belief Networks
 
-**GD**  Gradient Descent
+**GD**:  Gradient Descent
 
-**HCA** Hierarchical Cluster Analysis
+**HCA**: Hierarchical Cluster Analysis
 
-**IID** Independent and Identically Distributed
+**IID**: Independent and Identically Distributed
 
-**LASSO Regression** Least Absolute Shrinkage and Selection Operator Regression
+**LASSO Regression**: Least Absolute Shrinkage and Selection Operator Regression
 
-**LLE** Locally Linear Embedding
+**LLE**: Locally Linear Embedding
 
-**MAE** Mean Absolute Error (aka average absulte deviation)
+**MAE**: Mean Absolute Error (Also known as Average Absulte Deviation)
 
-**NLP** Natural Language Processing
+**NLP**: Natural Language Processing
 
-**NLU** Natural Language Understanding
+**NLU**: Natural Language Understanding
 
-**PCA** Principal Component Analysis
+**PCA**: Principal Component Analysis
 
-**RBM** Restricted Boltzmann Machines
+**RBM**: Restricted Boltzmann Machines
 
-**RL** Reinforcement Learging
+**RL**: Reinforcement Learning
 
-**RMQE** Root Mean Square Error
+**RMSE**: Root Mean Square Error
 
-**RNN** Recurrent Neural Network
+**RNN**: Recurrent Neural Network
 
-**SGD** Stochastic Gradient Descent
+**SGD**: Stochastic Gradient Descent
 
-**SVD** Singular Value Decomposition
+**SVD**: Singular Value Decomposition
 
-**SVM** Support Vector Machines
+**SVM**: Support Vector Machines
 
-**t-SNE** t-Distributed Stochastic Neighbor Embedding
+**t-SNE**: t-Distributed Stochastic Neighbor Embedding
