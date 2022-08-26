@@ -124,10 +124,17 @@ The model is too simple to learn the underlying structure of the data
 
 
 
+
+
+
+# Appendices
+
 ## Appendix A. Glossary
-**Attribute or Feature**: Describes a data type
+**Attribute**: Describes a data type, attribute and feature are ofter used interchangeably
 
 **Cost function**: Measure how bad the model is
+
+**Feature**: Generally means an attribute plus its value
 
 **Generalization**: How many number of training examples are needed for the system to make good predictions on examples it has never seen before, in order for a model to generalize well, it is crucial that the training data be representative of the new cases that you want the model to generalize to.
 
@@ -142,17 +149,23 @@ The model is too simple to learn the underlying structure of the data
 
 **Out-of-sample error**: Generalization error, tells how well the model will perform on instances it has never seen before. If training error is low, but generalization error is high, the model is over-lifting the training data 
 
-**Overfitting**: The model performs well on the training data, but it does not generalize well.
+[**Overfitting**](#overfitting)
 
 **Pipeline**: A sequence of data processing components
 
-**Regularization**: Constraining a model to make it simpler and reduce the risk of overfitting.
+**Predictor**: A feature. If given a task to predict a target numeric value the set of features are called predictors.
+
+**Regularization**: Constraining a model to make it simpler and reduce the risk of [**overfitting**](#overfitting).
+
+[**Sampling bias**](#nonrepresentative-training-data---sampling-bias)
 
 **Signal**: A piece of information fed to a Machine Learning Algorithm
 
 **Standard Deviation**: The square root of the variance, which is the average of the squared deviation from the mean
 
-**Standarization**: Substract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
+**Standarization**: Subtract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
+
+[**Underfitting**](#underfitting)
 
 **Utility function (fitness function)**: Measure hoy good the model is
 
