@@ -1,9 +1,12 @@
-# Hands-On Machine Learning
+# Hands-On Machine Learning Notes
 
 - [About](#about)
-- [Part I. Machine Learning](#part-i-machine-learning)
-  * [Types of Machine Learning](#types-of-machine-learning)
-- [Part II. Appendices](#part-ii-appendices)
+- [Machine Learning Systems](#machine-learning-systems)
+  * [Trained with or without human supervision](#trained-with-or-without-human-supervision)
+  * [Learning From a Stream of Incoming Data](#learning-from-a-stream-of-incoming-data)
+  * [Reaction to Previously Unseen Data (Instance-Based / Model-Based)](#reaction-to-previously-unseen-data-instance-based--model-based)
+  * [Challenges](#challenges)
+- [Appendices](#appendices)
   * [Appendix A. Glossary](#appendix-a-glossary)
   * [Appendix B. Acronyms](#appendix-b-acronyms)
 
