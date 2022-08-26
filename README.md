@@ -11,17 +11,25 @@
 
 Notes from the book Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow , 2nd Edition, by Aurélien Géron (O’Reilly). Copyright 2019 Kiwisoft S.A.S., 978-1-492-03264-9.
 
-# Part I. Machine Learning
-## What is Machine Learning
-Programming computers so they can _learn_ from data.
+# Machine Learning Systems
 
-## Types of Machine Learning
+
+Machine Learning is about making machines get better at some task by learning from data, instead of having to explicitly code rules.
+
+## Trained With or Without Human Supervision
+
+
 ### Supervised
 
-Trained with human supervision, the data you feed includes the desired solutions
+Trained with human supervision, the data you feed includes the desired solutions, called labels.
+
+Classification is a typical supervised learning task: For example, a spam filter trained with many examples along with their class (spam or ham)
+
+Some of the most important supervised learning algorithms:
+
 * k-Nearest neighbors
 * Linear Regression
-* Logistic Regression
+* Logistic Regression: It can output a value that corresponds to the probability of belonging to a given class
 * Support Vector Machines
 * Decision Trees and Random Forest
 * Neural Networks (in some cases)
@@ -31,21 +39,90 @@ Trained with human supervision, the data you feed includes the desired solutions
 Trained without human supervision, the training data is unlabeled. The system tries to learn without a teacher.
 
 * Clustering
-    * K-Means
-    * DBSCAN
-    * Hierarchical Cluster Analysis
-* Anomaly detection and novelty detection
-    * Anomaly detection: train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
-    * Novelty detection: Detect new instances that look different from all instances in the training set
+  * K-Means
+  * DBSCAN
+  * Hierarchical Cluster Analysis (HCA)
+* Anomaly detection [1] and novelty detection [2]
     * One-class SVM
     * Isolation Forest
-* Visualization and dimensionality reduction
-    * Principal Component Analysis
-    * Kernel PCA
-    * Locally Linear Embedding 
-    * t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
-# Part II. Appendices
+[1] Anomaly detection: train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
+
+[2] Novelty detection: Detect new instances that look different from all instances in the training set)
+
+* Visualization and dimensionality reduction
+  * Principal Component Analysis (PCA)
+  * Kernel PCA
+  * Locally Linear Embedding (LLE)
+  * t-Distributed Stochastic Neighbor Embedding (t-SNE)
+
+* Association rule learning [3]
+  * Apriori
+  * Eclat
+
+[3] Dig into large amounts of data and discover interesting relations between attributes
+
+
+### Semisupervised
+
+Usually a combination of supervised and unsupervised algorithms
+
+* Deep Belief Networks (DBNs)
+* Restricted Boltzmann Machines (RBMs)
+
+### Reinforcement Learning
+
+The learning system (_agent_) observes the environment, selects and perform actions, and gets _rewards_ or _penalties_ in return. The _agent_ must learn by itself what is the best strategy (_policy_) to get the most reward over time. The _policy_ defines what action the _agent_ should choose when it is in a given situation.
+
+## Learning From a Stream of Incoming Data
+
+### Offline Learning - Batch Learning
+
+The system is incapable of learning incrementally. It must be trained using all the available data. 
+When it is launched into production, runs without learning anymore, it applies what is has learned (offline learning)
+
+### Online Learning - Incremental Learning
+The system is trained incrementally by feeding it data instances sequentially, either individually or in small groups called mini-batches.
+
+## Reaction to Previously Unseen Data (Instance-Based / Model-Based)
+
+### Instance-based learning
+_Learning by heart_
+
+Generalizes to new cases by using a similarity measure to compare them to the learned examples. Compares new data points to known data points.
+
+
+### Model-based learning
+Build a model with examples and use it to make predictions. Detects patterns in the training data and build a predictive model.
+
+## Challenges
+### Insufficient Quantity of Training Data
+It takes _a lot_ of data for most Machine Learning algorithms to work properly
+### Nonrepresentative Training Data - Sampling Bias
+When some members of the population are systematically more likely to be selected in a sample than others, the model will be unlikely to make accurate predictions. 
+### Poor Quality Data
+
+### Irrelevant Features
+A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process is called _feature engineering_:
+1. Feature Selection: Select the most useful features to train on among existing features.
+2. Feature extraction: Combining features to produce a more useful one, dimensionality reduction algorithms can help.
+### Overfitting
+The model is too complex relative to the amount and noisiness of the training data
+
+* Simplify the model by selecting one with fewer parameters
+* Reduce the number of attributes in the training data
+* Add constraints to the model to make it simpler (regularization)
+* Gather more training data
+* Reduce the noise in the training data (e.g., fix data errors and remove outliers)
+
+### Underfitting
+The model is too simple to learn the underlying structure of the data
+
+* Select a more powerful model
+* Feed better features to the learning algorithm ([**feature engineering**](#irrelevant-features))
+* Reduce the constrains on the model
+
+
 
 ## Appendix A. Glossary
 **Attribute or Feature**: Describes a data type
