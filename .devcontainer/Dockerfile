@@ -17,7 +17,7 @@ RUN wget \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh 
 
-RUN conda create --name homl python=3.9 numpy matplotlib jupyter
+RUN conda create --name homl python=3.9 numpy matplotlib jupyter pandas
 RUN conda init bash
 
 RUN echo "conda activate homl" >> ~/.bashrc
