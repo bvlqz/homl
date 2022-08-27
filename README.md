@@ -9,6 +9,7 @@
 - [Appendices](#appendices)
   * [Appendix A. Glossary](#appendix-a-glossary)
   * [Appendix B. Acronyms](#appendix-b-acronyms)
+  * [Appendix C. Data Repositories](#appendix-b-acronyms)
 
 # About
 
@@ -213,3 +214,14 @@ The model is too simple to learn the underlying structure of the data
 **SVM**: Support Vector Machines
 
 **t-SNE**: t-Distributed Stochastic Neighbor Embedding
+
+## Appendix C. Data Repositories
+
+* [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/ml/index.php)
+* [Kaggle Datasets](https://www.kaggle.com/datasets)
+* [Registry of Open Data on AWS](https://registry.opendata.aws/)
+* [Data Portals: A Comprehensive List of Open Data Portals from Around the World](http://dataportals.org/)
+* [OpenDataMonitor](https://opendatamonitor.eu/frontend/web/index.php?r=dashboard%2Findex)
+* [Nasdaq Data Link: A premier source for financial, economic and alternative datasets](https://data.nasdaq.com/)
+* [List of datasets for machine-learning research](https://en.wikipedia.org/wiki/List_of_datasets_for_machine-learning_research)
+* [Quora: Where can I find large datasets open to the public?](https://www.quora.com/Where-can-I-find-large-datasets-open-to-the-public)
