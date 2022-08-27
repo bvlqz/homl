@@ -165,92 +165,51 @@ A labeled training set is a training set that contains the desired solution for 
 
 ## Appendix A. Glossary
 
-**Anomaly detection**: Train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
-
-**Attribute**: Describes a data type, attribute and feature are ofter used interchangeably
-
-**Cost function**: Measure how bad the model is
-
-**Feature**: Generally means an attribute plus its value
-
-**Generalization**: How many number of training examples are needed for the system to make good predictions on examples it has never seen before, in order for a model to generalize well, it is crucial that the training data be representative of the new cases that you want the model to generalize to.
-
-[**_Holdout validation_**](#holdout-validation)
-
-**Hyperparamenter**: The amount of regularization to apply during learning (this is a parameter of the learning algorithm, not the model), it is set before training and remains constant during training
-
-**Hypotesis**: The system's prediction function
-
-**Learning rate**: how fast the system adapt to changing data, faster learning rate typically means the system will also forget the old data
-
-**Min-max scaling**: aka. Normalization - Values are shifted and rescaled so that they end up ranging from 0 to 1.
-
-**Novelty detection**: Detect new instances that look different from all instances in the training set
-
-**Out-of-core learning**: Train systems on datasets that cannot fit in one machine main memory - load part of the data - run training step on that data - repeat until it has run on all data. 
-
-**Out-of-sample error**: Generalization error, tells how well the model will perform on instances it has never seen before. If training error is low, but generalization error is high, the model is over-lifting the training data 
-
-[**Overfitting**](#overfitting)
-
-**Pipeline**: A sequence of data processing components
-
-**Predictor**: A feature. If given a task to predict a target numeric value the set of features are called predictors.
-
-**Regularization**: Constraining a model to make it simpler and reduce the risk of [**overfitting**](#overfitting).
-
-[**Sampling bias**](#nonrepresentative-training-data---sampling-bias)
-
-**Signal**: A piece of information fed to a Machine Learning Algorithm
-
-**Standard Deviation**: The square root of the variance, which is the average of the squared deviation from the mean
-
-**Standarization**: Subtract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
-
-[**Underfitting**](#underfitting)
-
-**Utility function (fitness function)**: Measure hoy good the model is
-
-[**Validation Set**](#holdout-validation)
+* **Anomaly detection**: Train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
+* **Attribute**: Describes a data type, attribute and feature are ofter used interchangeably
+* **Cost function**: Measure how bad the model is
+* **Feature**: Generally means an attribute plus its value
+* **Generalization**: How many number of training examples are needed for the system to make good predictions on examples it has never seen before, in order for a model to generalize well, it is crucial that the training data be representative of the new cases that you want the model to generalize to.
+* **Holdout validation**: [Jump to section](#holdout-validation)
+* **Hyperparamenter**: The amount of regularization to apply during learning (this is a parameter of the learning algorithm, not the model), it is set before training and remains constant during training
+* **Hypotesis**: The system's prediction function
+* **Learning rate**: how fast the system adapt to changing data, faster learning rate typically means the system will also forget the old data
+* **Min-max scaling**: aka. Normalization - Values are shifted and rescaled so that they end up ranging from 0 to 1.
+* **Novelty detection**: Detect new instances that look different from all instances in the training set
+* **Out-of-core learning**: Train systems on datasets that cannot fit in one machine main memory - load part of the data - run training step on that data - repeat until it has run on all data. 
+* **Out-of-sample error**: Generalization error, tells how well the model will perform on instances it has never seen before. If training error is low, but generalization error is high, the model is over-lifting the training data 
+* **Overfitting**: [Jump to section](#overfitting)
+* **Pipeline**: A sequence of data processing components
+* **Predictor**: A feature. If given a task to predict a target numeric value the set of features are called predictors.
+* **Regularization**: Constraining a model to make it simpler and reduce the risk of [overfitting](#overfitting).
+* **Sampling bias**: [Jump to section](#nonrepresentative-training-data---sampling-bias)
+* **Signal**: A piece of information fed to a Machine Learning Algorithm
+* **Standard Deviation**: The square root of the variance, which is the average of the squared deviation from the mean
+* **Standarization**: Subtract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
+* **Underfitting**: [Jump to section](#underfitting)
+* **Utility function (fitness function)**: Measure hoy good the model is
+* **Validation Set**: [Jump to section](#holdout-validation)
 
 ## Appendix B. Acronyms
-**CNN**: Convolutional Neural Network
-
-**DBN**: Deep Belief Networks
-
-**GD**:  Gradient Descent
-
-**HCA**: Hierarchical Cluster Analysis
-
-**IID**: Independent and Identically Distributed
-
-**LASSO Regression**: Least Absolute Shrinkage and Selection Operator Regression
-
-**LLE**: Locally Linear Embedding
-
-**MAE**: Mean Absolute Error (Also known as Average Absulte Deviation)
-
-**NLP**: Natural Language Processing
-
-**NLU**: Natural Language Understanding
-
-**PCA**: Principal Component Analysis
-
-**RBM**: Restricted Boltzmann Machines
-
-**RL**: Reinforcement Learning
-
-**RMSE**: Root Mean Square Error
-
-**RNN**: Recurrent Neural Network
-
-**SGD**: Stochastic Gradient Descent
-
-**SVD**: Singular Value Decomposition
-
-**SVM**: Support Vector Machines
-
-**t-SNE**: t-Distributed Stochastic Neighbor Embedding
+* **CNN**: Convolutional Neural Network
+* **DBN**: Deep Belief Networks
+* **GD**:  Gradient Descent
+* **HCA**: Hierarchical Cluster Analysis
+* **IID**: Independent and Identically Distributed
+* **LASSO Regression**: Least Absolute Shrinkage and Selection Operator Regression
+* **LLE**: Locally Linear Embedding
+* **MAE**: [**Mean Absolute Error**](#mean-absolute-error) (Also known as Average Absulte Deviation)
+* **NLP**: Natural Language Processing
+* **NLU**: Natural Language Understanding
+* **PCA**: Principal Component Analysis
+* **RBM**: Restricted Boltzmann Machines
+* **RL**: Reinforcement Learning
+* **RMSE**: [**Root Mean Square Error**](#root-mean-square-error)
+* **RNN**: Recurrent Neural Network
+* **SGD**: Stochastic Gradient Descent
+* **SVD**: Singular Value Decomposition
+* **SVM**: Support Vector Machines
+* **t-SNE**: t-Distributed Stochastic Neighbor Embedding
 
 ## Appendix C. Data Repositories
 
