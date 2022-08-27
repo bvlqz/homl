@@ -13,6 +13,8 @@
 		"ms-toolsai.jupyter-renderers",
 		"ms-toolsai.jupyter-keymap",
 		"ms-python.vscode-pylance",
-		"ms-python.python"
+		"ms-python.python",
+		"streetsidesoftware.code-spell-checker",
+		"bierner.markdown-mermaid"
 	]
 }
