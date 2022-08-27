@@ -6,6 +6,7 @@
   * [Learning From a Stream of Incoming Data](#learning-from-a-stream-of-incoming-data)
   * [Reaction to Previously Unseen Data (Instance-Based / Model-Based)](#reaction-to-previously-unseen-data-instance-based--model-based)
   * [Challenges](#challenges)
+  * [Testing and Validation](#testing-and-validation)
 - [Appendices](#appendices)
   * [Appendix A. Glossary](#appendix-a-glossary)
   * [Appendix B. Acronyms](#appendix-b-acronyms)
@@ -16,9 +17,15 @@
 Notes from the book Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow , 2nd Edition, by Aurélien Géron (O’Reilly). Copyright 2019 Kiwisoft S.A.S., 978-1-492-03264-9.
 
 # Machine Learning Systems
-
+> Programming computers so they can _learn_ from data.
 
 Machine Learning is about making machines get better at some task by learning from data, instead of having to explicitly code rules.
+
+Machine Learning shines when:
+* The existing solutions require a lot of fine tunning or long lists of rules.
+* Using a traditional approach yields no good solution.
+* In a Fluctuating environment.
+* You want to get insights about complex problems and large amounts of data (data mining).
 
 ## Trained With or Without Human Supervision
 
@@ -46,13 +53,9 @@ Trained without human supervision, the training data is unlabeled. The system tr
   * K-Means
   * DBSCAN
   * Hierarchical Cluster Analysis (HCA)
-* Anomaly detection [1] and novelty detection [2]
+* Anomaly detection and novelty detection
     * One-class SVM
     * Isolation Forest
-
-[1] Anomaly detection: train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
-
-[2] Novelty detection: Detect new instances that look different from all instances in the training set)
 
 * Visualization and dimensionality reduction
   * Principal Component Analysis (PCA)
@@ -60,12 +63,9 @@ Trained without human supervision, the training data is unlabeled. The system tr
   * Locally Linear Embedding (LLE)
   * t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
-* Association rule learning [3]
+* Association rule learning: Dig into large amounts of data and discover interesting relations between attributes
   * Apriori
   * Eclat
-
-[3] Dig into large amounts of data and discover interesting relations between attributes
-
 
 ### Semisupervised
 
@@ -95,23 +95,33 @@ _Learning by heart_
 
 Generalizes to new cases by using a similarity measure to compare them to the learned examples. Compares new data points to known data points.
 
+Learns the training data by heart; then, when given a new instances, it uses a similarity measure to find the most similar learned instances and uses them to make predictions.
 
 ### Model-based learning
 Build a model with examples and use it to make predictions. Detects patterns in the training data and build a predictive model.
 
+It searches for an optimal value for the model parameters such that the model will generalize well to new instances.
+
 ## Challenges
+A system will not perform well if the training set is not representative. 
+A model needs to be neither too simple (underfit) nor too complex (overfit)
+
 ### Insufficient Quantity of Training Data
 It takes _a lot_ of data for most Machine Learning algorithms to work properly
+
 ### Nonrepresentative Training Data - Sampling Bias
 When some members of the population are systematically more likely to be selected in a sample than others, the model will be unlikely to make accurate predictions. 
+
 ### Poor Quality Data
+If the data is full of errors, outliers and noise, it will make it harder for the system to detect underlying patterns.
 
 ### Irrelevant Features
 A critical part of the success of a Machine Learning project is coming up with a good set of features to train on. This process is called _feature engineering_:
 1. Feature Selection: Select the most useful features to train on among existing features.
 2. Feature extraction: Combining features to produce a more useful one, dimensionality reduction algorithms can help.
+
 ### Overfitting
-The model is too complex relative to the amount and noisiness of the training data
+The model is too complex relative to the amount and noisiness of the training data. If the training error is low (the model makes few mistakes on the training set) but the generalization error is high, it means that the model is overfitting the training data. 
 
 * Simplify the model by selecting one with fewer parameters
 * Reduce the number of attributes in the training data
@@ -127,13 +137,36 @@ The model is too simple to learn the underlying structure of the data
 * Reduce the constrains on the model
 
 
+## Testing and Validation
 
+### The Difference Between a Model Parameter and a Learning Algorithm Hyperparameter.
+A model has one or more model parameters that determine what it will predict given a new instance (e.g., the slope of a linear model). A learning algorithm tries to find optimal values for these parameters such that the model generalizes well to new instances.
 
+By convention, the Greek letter $\theta$ (theta) is frequently used to represent model parameters.
 
+A hyperparameter is a parameter of the learning algorithm itself, not the model (e.g., the amount of regularization to apply).
+
+### Training Set
+Split your data into two sets: the _training set_ and the _test set_.
+
+A labeled training set is a training set that contains the desired solution for each instance.
+
+### _Holdout Validation_
+1. Hold out part of the training set to evaluate several candidate models and select the best one. The new held-out set is called the _validation set_.
+2. Train multiple models with various hyperparameters on the reduced training set (full training set minus the validation set).
+3. Select the model that performs best on the validation set.
+4. Train the best model on the full training set (including the validation set).
+5. Evaluate this final model on the test set to get an estimate of the generalization error. 
+
+* If the validation set is too small, the model evaluations will be imprecise.
+* Is the validation set is too large, the remaining training set will be much smaller than the full training set. One way to solve this problem is to use _cross-validation_, using many small validations sets.
 
 # Appendices
 
 ## Appendix A. Glossary
+
+**Anomaly detection**: Train with mostly normal instances and when it sees a new one it can tell wether it looks like a normal one or an anomaly
+
 **Attribute**: Describes a data type, attribute and feature are ofter used interchangeably
 
 **Cost function**: Measure how bad the model is
@@ -142,12 +175,17 @@ The model is too simple to learn the underlying structure of the data
 
 **Generalization**: How many number of training examples are needed for the system to make good predictions on examples it has never seen before, in order for a model to generalize well, it is crucial that the training data be representative of the new cases that you want the model to generalize to.
 
+[**_Holdout validation_**](#holdout-validation)
+
 **Hyperparamenter**: The amount of regularization to apply during learning (this is a parameter of the learning algorithm, not the model), it is set before training and remains constant during training
+
 **Hypotesis**: The system's prediction function
 
 **Learning rate**: how fast the system adapt to changing data, faster learning rate typically means the system will also forget the old data
 
 **Min-max scaling**: aka. Normalization - Values are shifted and rescaled so that they end up ranging from 0 to 1.
+
+**Novelty detection**: Detect new instances that look different from all instances in the training set
 
 **Out-of-core learning**: Train systems on datasets that cannot fit in one machine main memory - load part of the data - run training step on that data - repeat until it has run on all data. 
 
@@ -173,8 +211,7 @@ The model is too simple to learn the underlying structure of the data
 
 **Utility function (fitness function)**: Measure hoy good the model is
 
-**Validation Set**: Used to compare models, it makes it possible to select the best model and tune the hyperparamenters
-
+[**Validation Set**](#holdout-validation)
 
 ## Appendix B. Acronyms
 **CNN**: Convolutional Neural Network
