@@ -6,6 +6,7 @@
   * [Learning From a Stream of Incoming Data](#learning-from-a-stream-of-incoming-data)
   * [Reaction to Previously Unseen Data (Instance-Based / Model-Based)](#reaction-to-previously-unseen-data-instance-based--model-based)
   * [Challenges](#challenges)
+  * [Performance Measures](#performance-measures)
   * [Testing and Validation](#testing-and-validation)
 - [Appendices](#appendices)
   * [Appendix A. Glossary](#appendix-a-glossary)
@@ -136,6 +137,41 @@ The model is too simple to learn the underlying structure of the data
 * Feed better features to the learning algorithm ([**feature engineering**](#irrelevant-features))
 * Reduce the constrains on the model
 
+## Performance Measures
+
+### Notes
+* Lowercase italic font for scalar values (such as $m$) and function names (such as $h$)
+* Lowercase bold font for vectors (such as $\bold x$) and uppercase bold font for matrices (such as $\bold X$) 
+
+### Norm
+* $\ell_{0}$ gives the number of nonzero elements in the vector.
+
+* Computing the root of a sum of squares (RMSE) corresponds to the _Euclidean norm_, also called the $\ell_{2}\ norm$, noted ${\|\|}_2$ or $\|\|$
+
+* Computing the sum of absolutes (MAE) corresponds to the $\ell_{1}\ norm$, noted ${\|\|}_1$, sometimes called the _Manhattan norm_, because it measures the distance between two points in a city if you can only travel along orthogonal city blocks.
+
+* The $\ell_{k}\ norm$ of a vector $\bold v$ containing $n$ elements is defined as ${\|\bold v\|_k} = (|v_0|^k + |v_1|^k + ... + |v_n|^k)^{1 \over k} \cdot$
+
+* $\ell_{\infty}$ gives the maximum absolute value in the vector.
+
+The higher the norm index, the more it focuses on large values and neglects small ones. This is why the RMSE is more sensitive to outliers than the MAE- But when outliers are exponentially rare (like in a bell-shaped curve), the RMSE performs very well and is generally preferred.
+
+#### Root Mean Square Error
+$$ RMSE(\bold X, h) = \sqrt{ { 1 \over m }     \sum_{i=1}^{m}   (h ( \bold x^{(i)}) - y^{(i)} )^{2} } $$
+
+$m$ is the number of instances in the dataset
+
+$\bold x^{(i)}$ is a vector of all the feature values (excluding the label) of the $i^{th}$ instance in the dataset, and $y^{(i)}$ is its label (the desired output value for that instance)
+
+$\bold X$ is a matrix containing all the feature values (excluding labels) of all instances in the dataset.
+
+$h$ is the system's prediction function, also called _hypothesis_.
+
+$RMSE(\bold X, h)$ is the cost function measured on the set of examples using the hypothesis $h$
+
+
+#### Mean Absolute Error
+$$ MAE(\bold X, h) = { 1 \over m } \sum_{i=1}^{m}  | h ( \bold x^{(i)}) - y^{(i)} |  $$
 
 ## Testing and Validation
 
@@ -171,8 +207,8 @@ A labeled training set is a training set that contains the desired solution for 
 * **Feature**: Generally means an attribute plus its value
 * **Generalization**: How many number of training examples are needed for the system to make good predictions on examples it has never seen before, in order for a model to generalize well, it is crucial that the training data be representative of the new cases that you want the model to generalize to.
 * **Holdout validation**: [Jump to section](#holdout-validation)
-* **Hyperparamenter**: The amount of regularization to apply during learning (this is a parameter of the learning algorithm, not the model), it is set before training and remains constant during training
-* **Hypotesis**: The system's prediction function
+* **Hyperparameter**: The amount of regularization to apply during learning (this is a parameter of the learning algorithm, not the model), it is set before training and remains constant during training
+* **Hypothesis**: The system's prediction function
 * **Learning rate**: how fast the system adapt to changing data, faster learning rate typically means the system will also forget the old data
 * **Min-max scaling**: aka. Normalization - Values are shifted and rescaled so that they end up ranging from 0 to 1.
 * **Novelty detection**: Detect new instances that look different from all instances in the training set
@@ -185,7 +221,7 @@ A labeled training set is a training set that contains the desired solution for 
 * **Sampling bias**: [Jump to section](#nonrepresentative-training-data---sampling-bias)
 * **Signal**: A piece of information fed to a Machine Learning Algorithm
 * **Standard Deviation**: The square root of the variance, which is the average of the squared deviation from the mean
-* **Standarization**: Subtract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
+* **Standardization**: Subtract the mean value, and then divide it by the standard deviation so that the resulting distribution has unit variance.
 * **Underfitting**: [Jump to section](#underfitting)
 * **Utility function (fitness function)**: Measure hoy good the model is
 * **Validation Set**: [Jump to section](#holdout-validation)
